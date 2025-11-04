@@ -2,7 +2,7 @@
 
 ## Technologies Used
 
-##Backend:
+### Backend:
 - Node.js
 - Express
 - PostgreSQL
@@ -12,7 +12,7 @@
 - dotenv
 - cors
 
-###Frontend:
+### Frontend:
 - React
 - React Router
 - Create React App (react-scripts)
