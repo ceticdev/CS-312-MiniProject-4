@@ -2,7 +2,7 @@
 
 ## Technologies Used
 
-###Backend:
+##Backend:
 - Node.js
 - Express
 - PostgreSQL
