@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Account</h1>
+        </header>
+        <main>
+            <% if (messages && messages.error) { %>
+                <p style="color: red;"><%= messages.error %></p>
+            <% } %>
+            <form action="/auth/account" method="POST">
+                <div>
+                    <label for="user_id">User ID:</label>
+                    <input type="text" id="user_id" name="user_id" value="<%= session.user.id %>" required>
+                </div>
+                <div>
+                    <label for="password">New Password (leave blank to keep current):</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <button type="submit" class="btn">Update</button>
+            </form>
+            <p><a href="/posts">Back to Posts</a></p>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><%= post.title %></h1>
+            <small>By <%= post.creator_name %> on <%= new Date(post.date_created).toLocaleDateString() %></small>
+        </header>
+        <main>
+            <article>
+                <p><%= post.body %></p>
+            </article>
+            <a href="/posts" class="btn">Back to Posts</a>
+            <% if (session.user && session.user.id === post.creator_user_id) { %>
+                <a href="/posts/<%= post.blog_id %>/edit" class="btn">Edit</a>
+                <form action="/posts/<%= post.blog_id %>/delete" method="POST" style="display: inline;">
+                    <button type="submit" class="btn">Delete</button>
+                </form>
+            <% } %>
+        </main>
+    </div>
+</body>
+</html>
